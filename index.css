@@ -1,0 +1,394 @@
+@charset "UTF-8";
+/**
+ * Yo框架动画解决方案
+ * Yo内置了超过60种动画形态，不同的动画可以任意组合
+ */
+.ani {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.ani.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+/**
+ * @module fade
+ * @description 定义从右侧淡出动画
+ * @method fade-out-right
+ */
+@-webkit-keyframes fade-out-right {
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0); } }
+
+@keyframes fade-out-right {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); } }
+
+.ani.fade-out-right {
+  -webkit-animation-name: fade-out-right;
+  animation-name: fade-out-right; }
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "微软雅黑"; }
+
+.big-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url("img/bg1.jpg"); }
+  .big-box .scene-box {
+    width: 1000px;
+    height: 560px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; }
+    .big-box .scene-box .information {
+      width: 150px;
+      height: 240px;
+      left: -100px;
+      top: -10px;
+      position: absolute;
+      z-index: 100; }
+      .big-box .scene-box .information .songers {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer; }
+        .big-box .scene-box .information .songers .song img {
+          width: 150px; }
+
+@keyframes zhuan {
+  0% {
+    transform: rotate3d(0, 0, 0, 360deg); }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg); } }
+        .big-box .scene-box .information .songers .song.imgdong {
+          animation: zhuan 9s linear 0s infinite both;
+          -moz-animation: zhuan 9s linear 0s infinite both; }
+
+@-moz-keyframes zhuan {
+  0% {
+    transform: rotate3d(0, 0, 0, 360deg);
+    -moz-transform: rotate3d(0, 0, 0, 360deg); }
+  100% {
+    -moz-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg); } }
+        .big-box .scene-box .information .songers .erji {
+          width: 20px;
+          height: 20px;
+          background-size: cover;
+          background-image: url("img/erji.png");
+          position: absolute;
+          left: 0;
+          bottom: 0; }
+      .big-box .scene-box .information .geshou, .big-box .scene-box .information .geming {
+        width: 100%;
+        height: 30px;
+        border-radius: 15px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        line-height: 30px;
+        font-size: 12px; }
+      .big-box .scene-box .information .geming {
+        font-size: 16px; }
+
+.scene {
+  width: 1000px;
+  height: 560px;
+  border-radius: 10px;
+  background: #51cfcb;
+  background-size: cover;
+  background-image: url("img/scene.jpeg");
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; }
+  .scene .box {
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-radius: 5px; }
+    .scene .box .jindu {
+      width: 1000px;
+      height: 3px;
+      background-color: #6dcabe;
+      position: relative; }
+      .scene .box .jindu .circles {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #fff;
+        position: absolute;
+        top: -3px;
+        left: 0;
+        cursor: pointer; }
+    .scene .box .message {
+      width: 150px;
+      height: 40px;
+      background: #51cfcb;
+      border-radius: 25px;
+      margin-top: 10px;
+      margin-left: 30px;
+      float: left;
+      text-align: center;
+      line-height: 40px; }
+    .scene .box .qiehuan {
+      width: 150px;
+      height: 34px;
+      background-color: #6dcabe;
+      border-radius: 17px;
+      float: left;
+      margin-top: 15px;
+      margin-left: 100px; }
+      .scene .box .qiehuan .lastsong, .scene .box .qiehuan .nextsong {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer; }
+      .scene .box .qiehuan .lastsong {
+        background-image: url("img/zuo.png");
+        background-size: 34px 34px;
+        float: left; }
+      .scene .box .qiehuan .nextsong {
+        background-image: url("img/you.png");
+        background-size: 34px 34px;
+        float: right; }
+      .scene .box .qiehuan .start-pause {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-size: 34px 34px;
+        background-image: url("img/zt1.png");
+        margin-left: 25px;
+        float: left;
+        cursor: pointer; }
+      .scene .box .qiehuan .zanting {
+        background-image: url("img/bf.png"); }
+    .scene .box .songlength {
+      width: 130px;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+      margin-top: 15px;
+      margin-left: 50px;
+      color: #fff; }
+      .scene .box .songlength .nowsonglength {
+        float: left; }
+      .scene .box .songlength .allsonglength {
+        float: left; }
+    .scene .box .xunhuan {
+      margin-top: 15px;
+      margin-left: 100px;
+      float: left;
+      position: relative; }
+      .scene .box .xunhuan .xhgd {
+        width: 30px;
+        height: 30px;
+        background-image: url("img/shunxu.png");
+        cursor: pointer;
+        background-size: cover; }
+        .scene .box .xunhuan .xhgd:hover {
+          background-image: url("img/shunxuh.png"); }
+        .scene .box .xunhuan .xhgd.danqu {
+          background-image: url("img/danqu.png"); }
+          .scene .box .xunhuan .xhgd.danqu:hover {
+            background-image: url("img/danquh.png"); }
+        .scene .box .xunhuan .xhgd.liebiao {
+          background-image: url("img/liebiao.png"); }
+          .scene .box .xunhuan .xhgd.liebiao:hover {
+            background-image: url("img/liebiaoh.png"); }
+        .scene .box .xunhuan .xhgd.suiji {
+          background-image: url("img/suiji.png"); }
+          .scene .box .xunhuan .xhgd.suiji:hover {
+            background-image: url("img/suijih.png"); }
+      .scene .box .xunhuan .qhxunhuan {
+        width: 30px;
+        height: 120px;
+        position: absolute;
+        transition: transform .8s ease,opacity .8s ease;
+        transform: translate3d(0, -30px, 0);
+        opacity: 0;
+        bottom: 50px; }
+        .scene .box .xunhuan .qhxunhuan .danqu, .scene .box .xunhuan .qhxunhuan .liebiao, .scene .box .xunhuan .qhxunhuan .suiji {
+          width: 30px;
+          height: 30px;
+          background-size: cover;
+          margin-top: 8px;
+          cursor: pointer; }
+        .scene .box .xunhuan .qhxunhuan .danqu {
+          background-image: url("img/danqu.png"); }
+          .scene .box .xunhuan .qhxunhuan .danqu:hover {
+            background-image: url("img/danquh.png"); }
+        .scene .box .xunhuan .qhxunhuan .liebiao {
+          background-image: url("img/liebiao.png"); }
+          .scene .box .xunhuan .qhxunhuan .liebiao:hover {
+            background-image: url("img/liebiaoh.png"); }
+        .scene .box .xunhuan .qhxunhuan .suiji {
+          background-image: url("img/suiji.png"); }
+          .scene .box .xunhuan .qhxunhuan .suiji:hover {
+            background-image: url("img/suijih.png"); }
+      .scene .box .xunhuan .chuxian {
+        transform: translate3d(0, 0, 0);
+        opacity: 1; }
+    .scene .box .yin {
+      float: right;
+      width: 150px; }
+      .scene .box .yin .voice {
+        width: 30px;
+        height: 30px;
+        background-image: url("img/yl.png");
+        margin: 15px;
+        float: left;
+        cursor: pointer; }
+        .scene .box .yin .voice.jingyinv {
+          cursor: pointer;
+          background-image: url("img/jy.png"); }
+      .scene .box .yin .voicejindu {
+        width: 50px;
+        height: 3px;
+        background-color: #6dcabe;
+        margin-top: 30px;
+        float: left;
+        position: relative; }
+        .scene .box .yin .voicejindu .circlev {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #fff;
+          position: absolute;
+          top: -3px;
+          left: 45px;
+          cursor: pointer; }
+
+.play-list {
+  width: 800px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  height: 500px; }
+  .play-list li {
+    box-sizing: border-box;
+    line-height: 48px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 1s;
+    position: relative; }
+    .play-list li:hover {
+      color: #51cfcb; }
+    .play-list li.active {
+      color: #51cfcb; }
+    .play-list li .name {
+      display: inline-block;
+      width: 200px; }
+    .play-list li .songer {
+      display: inline-block;
+      width: 200px; }
+    .play-list li .duration {
+      display: inline-block;
+      width: 200px; }
+    .play-list li .music {
+      width: 10px;
+      height: 10px;
+      margin-right: 15px;
+      margin-top: 19px;
+      float: left; }
+    .play-list li .wave {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("img/wave.gif"); }
+    .play-list li .button {
+      width: 150px;
+      float: right;
+      visibility: hidden; }
+      .play-list li .button .love, .play-list li .button .download, .play-list li .button .del {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        margin-top: 9px;
+        float: left; }
+      .play-list li .button .love {
+        background-size: cover;
+        background-image: url("img/love.png"); }
+        .play-list li .button .love:hover {
+          background-size: cover;
+          background-image: url("img/loveh.png"); }
+      .play-list li .button .download {
+        background-size: cover;
+        background-image: url("img/load.png"); }
+        .play-list li .button .download:hover {
+          background-size: cover;
+          background-image: url("img/loadh.png"); }
+      .play-list li .button .del {
+        background-size: cover;
+        background-image: url("img/del.png"); }
+        .play-list li .button .del:hover {
+          background-size: cover;
+          background-image: url("img/delh.png"); }
+
+.hid-play {
+  width: 800px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  height: 500px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  top: 0; }
+  .hid-play .lyric-box {
+    position: relative;
+    height: 500px;
+    margin-top: 30px; }
+    .hid-play .lyric-box .lyric {
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: auto;
+      top: 0; }
+      .hid-play .lyric-box .lyric p {
+        text-align: center;
+        height: 40px;
+        line-height: 40px; }
+        .hid-play .lyric-box .lyric p.active {
+          color: #51cfcb;
+          font-size: 20px; }
+
+.donghua {
+  position: absolute;
+  right: 30px;
+  bottom: 100px; }
+  .donghua li {
+    width: 20px;
+    border: 2px solid purple;
+    float: left;
+    margin-right: 4px; }
